@@ -1,23 +1,20 @@
 ---
 layout: single
-title: "Directional Message Passing for Molecular Graphs"
+title: "Spherical Message Passing for 3D Graph Networks"
 ---
 
-Molecule의 shape 중 Distance 정보만 활용하는 SchNet에서 발전된 모델인 DimeNet에 대해서 리뷰하겠습니다.
+Molecule의 shape 중 Distance, Angle, Torsion 정보를 모두 활용하는 SphereNet에 대해서 리뷰하겠습니다.
 
 # 3줄 요약
-1. molecule의 distance, angle 정보를 활용 (SchNet은 distance만 활용)
-2. Gaussian radial basis function 대신 spherical Bessel function과 spherical harmonics 사용
-3. Directional한 message passing 정의
+1. molecule의 distance, angle, torsion 정보를 모두 활용
+2. 
+3. Spherical Coordinate System (SCS)에 적합한 Spherical Message Passing (SMP) 정의
 <br />
 
 # Abstract
- - directional information (e.g. angle)은 molecule의 성질을 나타내는데에 중요한 역할을 한다. 
- - 하지만 기존 모델들은 이를 활용하고 있지 않다. 본 연구에서는 atom 성질을 그대로 사용하지 않고 atom 사이의 message를 embedding하는 directional message passing 방법을 제안한다. 
- - message 사이의 angle에 따라 message를 변환하여 directional 정보를 활용한다. 
- - 그리고 기존에 사용되었던 Gaussian radial basis function 대신 spherical Bessel function과 spherical harmonics 사용하여 더 뛰어난 성능을 보였다. 
- - 또한 1/4 미만의 parameter를 사용하였다. 
- - DimeNet은 MD17에서 76%, QM9에서 31%의 성능 향상이 있었다. 요약하면, ML 모델을 정의한다.
+- 저자는 현재 3D의 공간적인 위치를 고려한 priciple한 GN 프레임워크가 부족하다고 지적한다.
+- node들의 상대적인 위치가 SMS에서 unique하게 존재하고, SMP를 통하여 완전하고 정확한 3D Graph의 구조를 representation을 학습할 수 있다고 한다. 
+- 기존의 3D model들은 모두 SphereNet의 한 종류들이라고 주장한다.
 
 <br />
 
