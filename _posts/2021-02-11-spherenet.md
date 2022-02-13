@@ -29,6 +29,8 @@ Molecule의 shape 중 Distance, Angle, Torsion 정보를 모두 활용하는 Sph
  - 제안하는 SMP는 SCS에서 3DGN을 구현하기 위한 완전하고 정확한 architecture를 표현한다.
  - encoding된 3D 정보는 pairwise node간의 거리와 같은 상대적인 위치 정보이므로, SMP는 input graph의 translation과 rotation에 invariant한 prediction을 한다.
  - 기존의 SchNet, DimeNet 등은 부분적인 3D 정보만 활용하기 때문에 모두 SphereNet의 한 종류이다.
+  
+<br />
 
 # Related Work
 ## Methods for 3D Graphs
