@@ -33,20 +33,19 @@ Molecule의 shape 중 Distance, Angle, Torsion 정보를 모두 활용하는 Sph
 <br />
 
 # Related Work
-## Methods for 3D Graphs
+## Graph Neural Networks
 - 
 
 <br />
 
 # Directional Message Passing
 ## Graph neural networks
-![eq3](../images/2022-02-09-dimenet/eq3.png)
+GCN, GAT, GIN과 같은 일반적인 GNN은 3D positional info를 활용하지 않는다.
 
-일반적인 GNN은 이웃 node와 edge 정보, 그리고 자신의 정보를 바탕으로 update된다.
 
 <br />
 
-## Message embeddings
+## Methods for 3D Graphs
 $h_{i}$를 중심으로 살펴보자. $h_{i}$는 $m_{ji}$을 통해 update된다. 
 
 ![fig1](../images/2022-02-09-dimenet/fig1.png) 
