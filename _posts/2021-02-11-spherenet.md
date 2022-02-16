@@ -46,11 +46,8 @@ GCN, GAT, GIN과 같은 일반적인 GNN은 3D positional info를 활용하지 �
 <br />
 
 ## Methods for 3D Graphs
-$h_{i}$를 중심으로 살펴보자. $h_{i}$는 $m_{ji}$을 통해 update된다. 
-
-![fig1](../images/2022-02-09-dimenet/fig1.png) 
-
-$m_{ji}$은 $n_{j}$와 $n_{i}$ 사이의 distance와 $m_{kj}$를 통해 update되는데 그 과정에서 $n_{k}$, $n_{j}$, $n_{i}$의 angle도 함께 aggregate된다.
-![eq4](../images/2022-02-09-dimenet/eq4.png)
-
+- 3D graphs는 node들의 3D postion을 사용하지만 이를 직접적인 input으로 사용하진 않는다.
+- 직접적으로 사용하게 된다면, translation과 rotation에 invariant하지 않아 model의 performance를 크게 저하시킬 수 있기 때문이다.
+- 따라서 distances between nodes, angles between edges, angles between
+planes와 같은 relative 3D information를 활용하게 된다.
  
