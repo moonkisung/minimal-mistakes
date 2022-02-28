@@ -3,8 +3,6 @@ layout: single
 title: "Spherical Message Passing for 3D Graph Networks"
 ---
 
-Molecule의 shape 중 Distance, Angle, Torsion 정보를 모두 활용하는 SphereNet에 대해서 리뷰하겠습니다.
-
 # 3줄 요약
 1. molecule의 distance, angle, torsion 정보를 모두 활용
 2. Spherical Coordinate System (SCS)에 적합한 Spherical Message Passing (SMP) 정의
