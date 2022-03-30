@@ -24,7 +24,10 @@ title: "GROVER 인용 논문 정리"
   - ESOL, Freesolv, QM7, QM8
   - cited by 1
   - 인용 가능
-    
+
+
+<br />
+
 ## 2-1. An effective self-supervised framework for learning expressive molecular global representations to drug discovery
   - Briefings in Bioinformatics 2021, MPG
   - We followed the same experimental setting as GROVER[46]. Each dataset was split into train/validation/testset by the random scaffold split with a ratio of 8:1:1
