@@ -30,6 +30,14 @@ title: "GROVER 인용 논문 정리"
 
 ## 2-1. An effective self-supervised framework for learning expressive molecular global representations to drug discovery
   - Briefings in Bioinformatics 2021, MPG
+  - To capture the rich information in molecular graph motifs, GROVER [Rong et al., 2020] and MGSSL [Zhang et al., 2021] propose to predict or generate the motifs. Analogously, MPG [Li et al., 2021b] learns to compare two halfgraphs (each decomposed from a graph sample) and discriminate whether they come from the same source.
+  - Analogously, MPG [Li et al., 2021b] devises a neighbor attention module to get produce a message representation for each node and feed it to a fully connected feedforward network. 
+  - MPG use a pre-training strategy combining node and graph level. 
+  - the key idea of PHD strategy (Figure 1a) is to learn to compare
+two half-graphs (each decomposed from a graph sample) and
+discriminate whether they come from the same source (binary
+classification).
+  - transformer based
   - We followed the same experimental setting as GROVER[46]. Each dataset was split into train/validation/testset by the random scaffold split with a ratio of 8:1:1
   - ESOL, freesolv
   - SOTA
@@ -44,6 +52,10 @@ title: "GROVER 인용 논문 정리"
 
 ## 3. Learning Attributed Graph Representations with Communicative Message Passing Transformer
   - IJCAI 2021
+  - DMPNN, CoMPT proposed a interactive message passing scheme considering the interactions between atoms and bonds.
+  - CoMPT [Chen et al., 2021] utilize a message passing framework to better capture the interactions among atoms. However, they still require expensive annotations and barely generalize to unseen molecules, which pose hurdle to the practical applications
+  - To utilize topology information in molecular graphs, MPNN [Gilmer et al., 2017] and its variants DMPNN [Yang et al., 2019], CMPNN [Song et al., 2020], CoMPT [Chen et al., 2021] leverage the node and edge attributes during message passing.
+  - CoMPT (Chen et al. 2021) consider the edge features and strengthen the message interactions between bonds and atoms during message passing.
   - We used a 5-fold cross validation with scaffold split and replicated experiments on each tasks for five times.
   - ESOL, Freesolv
   - 인용 가능
