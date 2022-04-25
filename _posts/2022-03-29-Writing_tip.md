@@ -35,6 +35,24 @@ sets, the scaffold split offers a greater challenge for learning algorithms than
 
 - Scaffold split은 molecular data를 their substructure에 따라 나누기 때문에 train/val/test set이 구조적으로 다르게 구성된다. 따라서 일반적인 split 방법보다 prediction이 challenge 하고 모델의 일반화 능력이 요구되기 때문에 molecular dataset에 널리 쓰이고 있다.
 
+# Preserving Semtantics
+- To incorporate the domain knowledge into pre-training more explicitly, MoCL [Sun et al., 2021] proposed a new augmentation operator called substructure substitution, in which a valid substructure in a molecule is replaced by a bioisostere [Meanwell, 2011] which produces a new molecule with similar physical or chemical properties as the original one.
+
+- Also, they leave a future work to take the structural similarities between two graphs as supervision. Inspired by this, MoCL [Sun et al., 2021] first calculates the Tanimoto coefficient [Bajusz et al., 2015] between of two molecules as the measure of structural similarity, which serves as the supervisions for the pre-training.
+
+- Initially, GraphCL [You et al., 2020] augments molecular graph data in the form of naive random corruption (e.g., dropping bonds, dropping atoms and etc.). However, these augmentations may alter molecular graph semantics completely even if the perturbation is weak. For example, dropping a carbon atom in the phenyl ring will alter the aromatic system and result in an alkene chain, which will drastically change the molecular properties. Besides, MoCL [Sun et al., 2021] attempts to incorporate domain knowledge into graph data augmentation via replacing valid substructures in molecular graph with bioisosteres that share similar properties. However, bioisosteres are used to modify some molecular properties as expected (e.g, reduce toxicity) in drug design [Mannhold et al., 2012], which may introduce incorrect supervision for molecular properties prediction such as toxicity prediction. We compare MolAug with these augmentations in section 4.5.
+
+- In this section, we substitute MolAug with general graph augmentations including nodes drop(ND),edges perturbation(EP)in GraphCL[Youetal., 2020]and domain knowledge-enriched molecular graph augmentations(DK) in MoCL
+
+- MoCL[40] proposes to replace valid substructures in molecular graph with bioisosteres that share similar properties. However, it requires expensive domain knowledge as guidance and cannot be applied in other domains like social graphs.
+
+- The augmentation or perturbation of MoCL and our SimGRACE can preserve the class identity semantics well while GraphCL cannot.
+
+- More recently, MoCL [40] proposes to incorporate domain knowledge into molecular graph augmentations in order to preserve the semantics. However, the domain knowledge is extremely expensive. Worse still, MoCL can only work on molecular graph data, which significantly limits their generality.
 
 
+# 성과가 좋음
 - Despite the fruitful progress, they still require tedious manual trial-and-errors, cumbersome search or expensive domain knowledge for augmentation selection. Instead, our SimGRACE breaks through state-of-the-arts GCL framework that takes semantic-preserved data augmentations as prerequisite.
+
+# 풍부한 표현 학습
+- The global-level knowledge encodes the similarity information between graphs in the entire dataset and helps to learn representations with richer semantics.
